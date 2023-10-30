@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package example;
+
+option java_package = "com.example";
+option java_multiple_files = true;
+
+message GreetingRequest {
+  string name = 1;
+}
+message GreetingResponse {
+  string message = 1;
+}
+
+service GreetService {
+  rpc Greet (GreetingRequest) returns (GreetingResponse);
+}
